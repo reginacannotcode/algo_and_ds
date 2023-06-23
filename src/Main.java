@@ -1,21 +1,17 @@
-import java.util.concurrent.ThreadLocalRandom;
-
 public class Main {
     public static void main(String[] args) {
-        int[] array = new int[50];
-        for(int i = 0; i < array.length; i++) {
-            array[i] = ThreadLocalRandom.current().nextInt(0, 100);
-        }
+        var node0 = new Node(1);
+        var node1 = new Node(2);
+        var node2 = new Node(3);
+        var node3 = new Node(4);
+        var node4 = new Node(5);
 
-        for (int i = 0; i < array.length; i++) {
-            System.out.print(array[i] + " ");
-        }
-        System.out.println();
+        node0.next = node1;
+        node1.next = node2;
+        node2.next = node3;
+        node3.next = node4;
 
-        MergeSort.sort(array);
-
-        for (int i = 0; i < array.length; i++) {
-            System.out.print(array[i] + " ");
-        }
+        var list = new LinkedList(node0);
+        System.out.println(list);
     }
 }
