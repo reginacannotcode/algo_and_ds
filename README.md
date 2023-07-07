@@ -13,3 +13,7 @@ Welcome to regina's algorithms and data structures repository!
 This repo is for uploading the source code from my algo and ds videos. Feel free to try the code locally~
 
 Don't forget to be more hands-on after watching the videos! You'll find it a lot easier to digest the content!
+
+# 关注我的账号 Follow me
+### 哔哩哔哩 bilibili @阿婧不会写代码
+### YouTube @ReginaCannotCode
