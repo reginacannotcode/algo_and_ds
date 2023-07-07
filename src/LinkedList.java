@@ -72,6 +72,77 @@ public class LinkedList {
         prev.next = newNode;
         return this;
     }
+
+    public Node getByPos(int pos) {
+        if (pos < 0) {
+            return null;
+        }
+        var curr = head;
+        var i = 0;
+        while (i < pos) {
+            if (curr == null) {
+                return null;
+            }
+            curr = curr.next;
+            i++;
+        }
+        return curr;
+    }
+
+    public Node getFirst(int value) {
+        var curr = head;
+        while (curr != null) {
+            if(curr.value == value) {
+                return curr;
+            }
+            curr = curr.next;
+        }
+        return null;
+    }
+
+    public Node getLast(int value) {
+        var curr = head;
+        Node result = null;
+        while (curr != null) {
+            if(curr.value == value) {
+                result = curr;
+            }
+            curr = curr.next;
+        }
+        return result;
+    }
+
+    public ArrayList<Node> getAll(int value) {
+        var curr = head;
+        var result = new ArrayList<Node>();
+        while (curr != null) {
+            if(curr.value == value) {
+                result.add(curr);
+            }
+            curr = curr.next;
+        }
+        return result;
+    }
+
+    public LinkedList updateByPos(int pos, int newValue) throws Exception {
+        if (pos < 0) {
+            throw new Exception("Update position out of range");
+        }
+        var curr = head;
+        var i = 0;
+        while (i < pos) {
+            if (curr == null) {
+                throw new Exception("Update position out of range");
+            }
+            curr = curr.next;
+            i++;
+        }
+        if (curr == null) {
+            throw new Exception("Update position out of range");
+        }
+        curr.value = newValue;
+        return this;
+    }
 }
 
 
