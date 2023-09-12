@@ -143,6 +143,129 @@ public class LinkedList {
         curr.value = newValue;
         return this;
     }
+
+    public LinkedList deleteHead() {
+        if (head == null) {
+            return this;
+        }
+        head = head.next;
+        return this;
+    }
+
+    public LinkedList deleteTail() {
+        if (head == null) {
+            return this;
+        }
+        if (head.next == null) {
+            head = null;
+            return this;
+        }
+        var prev = head;
+        var curr = prev.next;
+        while (curr.next != null) {
+            prev = curr;
+            curr = curr.next;
+        }
+        prev.next = null;
+        return this;
+    }
+
+    public LinkedList deleteByPos(int pos) {
+        if (pos < 0 || head == null) {
+            return this;
+        }
+        if (pos == 0) {
+            return deleteHead();
+        }
+        var prev = head;
+        var curr = prev.next;
+        var i = 1;
+        while (i < pos) {
+            if (curr == null) {
+                return this;
+            }
+            prev = curr;
+            curr = curr.next;
+            i++;
+        }
+        if (curr == null) {
+            return this;
+        }
+        prev.next = curr.next;
+        curr.next = null;
+        return this;
+    }
+
+    public LinkedList deleteFirst(int val) {
+        if (head == null) {
+            return this;
+        }
+        if (head.value == val) {
+            return deleteHead();
+        }
+        var prev = head;
+        var curr = prev.next;
+        while (curr != null) {
+            if (curr.value == val) {
+                prev.next = curr.next;
+                curr.next = null;
+                return this;
+            }
+            prev = curr;
+            curr = curr.next;
+        }
+        return this;
+    }
+
+    public LinkedList deleteLast(int val) {
+        if (head == null) {
+            return this;
+        }
+        Node lastPrev = null;
+        Node last = null;
+        if (head.value == val) {
+            last = head;
+        }
+        var prev = head;
+        var curr = prev.next;
+        while (curr != null) {
+            if (curr.value == val) {
+                lastPrev = prev;
+                last = curr;
+            }
+            prev = curr;
+            curr = curr.next;
+        }
+        if (last == null) {
+            return this;
+        } else if (lastPrev == null) {
+            return deleteHead();
+        }
+        lastPrev.next = last.next;
+        last.next = null;
+        return this;
+    }
+
+    public LinkedList deleteAll(int val) {
+        if (head == null) {
+            return this;
+        }
+        while (head.value == val) {
+            deleteHead();
+        }
+        var prev = head;
+        var curr = prev.next;
+        while (curr != null) {
+            if (curr.value == val) {
+                prev.next = curr.next;
+                curr = curr.next;
+            } else {
+                prev = curr;
+                curr = curr.next;
+            }
+        }
+        return this;
+    }
 }
 
 

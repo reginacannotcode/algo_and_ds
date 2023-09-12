@@ -14,5 +14,21 @@ public class Main {
         } finally {
             System.out.println(list); // 1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 7 -> 3
         }
+
+        list.deleteHead();
+        System.out.println(list); // 2 -> 3 -> 4 -> 5 -> 6 -> 7 -> 3
+        list.deleteTail();
+        System.out.println(list); // 2 -> 3 -> 4 -> 5 -> 6 -> 7
+        list.deleteByPos(2);
+        System.out.println(list); // 2 -> 3 -> 5 -> 6 -> 7
+        try {
+            list.insertAtPos(3, 3);
+        } catch (Exception e) {
+            System.out.println(e);
+        } finally {
+            System.out.println(list); // 2 -> 3 -> 5 -> 3 -> 6 -> 7
+        }
+        list.deleteAll(3);
+        System.out.println(list); // 2 -> 5 -> 6 -> 7
     }
 }
