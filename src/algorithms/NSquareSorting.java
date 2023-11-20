@@ -1,3 +1,5 @@
+package algorithms;
+
 public class NSquareSorting {
     public static void insertionSort(int[] array) {
         int tmp;

@@ -1,3 +1,5 @@
+package algorithms;
+
 public class MergeSort {
     public static void sort(int[] array) {
         sortSection(array, 0, array.length - 1);

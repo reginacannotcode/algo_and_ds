@@ -1,3 +1,5 @@
+package algorithms;
+
 public class QuickSort {
     public static void sort(int[] array) {
         sortSection(array, 0, array.length - 1);

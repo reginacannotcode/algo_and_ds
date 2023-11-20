@@ -1,3 +1,5 @@
+package datastructures.array;
+
 public class MyIntegerArray {
     private int[] array;
     private int effectiveLen;

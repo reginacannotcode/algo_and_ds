@@ -1,3 +1,5 @@
+package datastructures.list;
+
 import java.util.ArrayList;
 
 public class LinkedList {
