@@ -1,3 +1,5 @@
+import datastructures.list.LinkedList;
+
 public class Main {
     public static void main(String[] args) {
         var list = new LinkedList(1);
